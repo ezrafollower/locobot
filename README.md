@@ -6,7 +6,7 @@ The main lecture repo for LoCobot and Pyrobot of ARG NCTU. The repo is mainly fo
 
 ### Similarities
 1. Most code are the exact same as the orignial repo
-2. Users and maintainers should update this repo with the original repo from time to time to include the newest features.
+2. Users and maintainers should update this repo with the original repo from time to time to include the newest features. You can use `source git_upstream_pull.sh`
 
 ### Differences
 1. We include dockerfiles and a script to launch our docker container. The docker is made according to the installation guid provided by the original repo.

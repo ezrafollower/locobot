@@ -1,3 +1,17 @@
+# ARG-NCTU LoCoBot and PyRobot
+
+The main lecture repo for LoCobot and Pyrobot of ARG NCTU. The repo is mainly for lectures and public activity purpose. 
+
+## Similarities and Differences with the original facebookresearch Pyrobot repo
+
+### Similarities
+1. Most code are the exact same as the orignial repo
+2. Users and maintainers should update this repo with the original repo from time to time to include the newest features.
+
+### Differences
+1. We include dockerfiles and a script to launch our docker container. The docker is made according to the installation guid provided by the original repo.
+2. We might include lecture content, including reading materials, hands on lab materials, demo codes.
+
 <a href="https://www.pyrobot.org/"><img class="doc_vid" src="docs/website/website/static/img/pyrobot.svg"></a>
 
 [PyRobot](https://www.pyrobot.org/) is a light weight, high-level interface which provides hardware independent APIs for robotic manipulation and navigation. This repository also contains the low-level stack for [LoCoBot](http://locobot.org), a low cost mobile manipulator hardware platform.

@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --rm -t argnctu/subt:locobot_pyrobot .
+docker build --rm -t argnctu/locobot:pyrobot .

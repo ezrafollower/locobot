@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -23,41 +23,11 @@ RUN adduser --disabled-password \
 RUN echo "root:root" | chpasswd
 RUN echo "${USER}:111111" | chpasswd
 
-###################################### basic tools #####################################
-
-RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
-    && apt-get -o Acquire::ForceIPv4=true install -yq --no-install-recommends \
-    locales \
-    cmake \
-    make \
-    git \
-    vim \
-    gedit \
-    wget \
-    sudo \
-    lsb-release \
-    build-essential \
-    net-tools \
-    dirmngr \
-    gnupg2 \
-    mercurial \
-    libcanberra-gtk-module \
-    libcanberra-gtk3-module \
-    libpcap-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-############################# LoCoBot and PyRobot ############################
-
-RUN curl 'https://raw.githubusercontent.com/facebookresearch/pyrobot/master/robots/LoCoBot/install/locobot_install_all.sh' > locobot_install_all.sh && chmod +x locobot_install_all.sh
-
-RUN ./locobot_install_all.sh -t full -p 3 -l interbotix
-
-RUN rm locobot_install_all.sh
+Run apt-get update && apt-get install -y curl lsb-release sudo software-properties-common
 
 ##################################### setting #####################################
 RUN chown -R ${USER}:${USER} ${HOME}/
-RUN echo "argsubt ALL=(ALL)  ALL" > /etc/sudoers
+RUN echo "argsubt ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
@@ -67,3 +37,12 @@ ENTRYPOINT ["/ros_entrypoint.sh"]
 USER ${USER}
 
 WORKDIR ${HOME}
+
+############################# LoCoBot and PyRobot ############################
+
+RUN curl 'https://raw.githubusercontent.com/facebookresearch/pyrobot/master/robots/LoCoBot/install/locobot_install_all.sh' > locobot_install_all.sh && chmod +x locobot_install_all.sh
+
+RUN ./locobot_install_all.sh -t full -p 2 -l interbotix
+
+RUN rm locobot_install_all.sh
+

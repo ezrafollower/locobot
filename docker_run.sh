@@ -72,7 +72,7 @@ docker run \
     -e ROS_MASTER_URI=$ROS_MASTER_URI \
     -e ROS_IP=$ROS_IP \
     -v "$XAUTH:$XAUTH" \
-    -v "/home/$USER/pyrobot:/home/argsubt/pyrobot" \
+    -v "/home/$USER/locobot_nctu:/home/argsubt/locobot_nctu" \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \

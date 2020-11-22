@@ -12,7 +12,7 @@ The script will create a workspace, move the pyrobot to the workspace, git clone
 cd pyrobot
 source scripts/set_up_ws.sh
 ```
-2. Compile Orbslam in your workspace.
+2. Compile Orbslam in your workspace. If you are running on a LoCoBot, **Please make sure the camera is connected.**
 ```
 cd ~/pyrobot-ws
 source docker_run.sh

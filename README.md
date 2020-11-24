@@ -1,18 +1,18 @@
 # ARG-NCTU LoCoBot and PyRobot
 
-The main lecture repo for LoCobot and Pyrobot of ARG NCTU. The repo is mainly for lectures and public activity purpose. 
+The main lecture repo for LoCobot and Pyrobot of ARG NCTU. The repo is mainly for lectures and PR purpose. 
 
 ## Upon Your First Clone
 **Please follow these instructions carefully!!!**
 
 1. Create a ros workspace for pyrobot.
 
-The script will create a workspace, move the pyrobot to the workspace, git clone necessary packages and add ORBSLAM path.
+The script creates a workspace, moves the pyrobot to the workspace, git clone necessary packages and export ORBSLAM path.
 ```
 cd pyrobot
 source scripts/set_up_ws.sh
 ```
-2. Compile Orbslam in your workspace. If you are running on a LoCoBot, **Please make sure the camera is connected.**
+2. Compile Orbslam in your workspace. If you run this on a LoCoBot, **Please make sure the camera is connected.**
 ```
 cd ~/pyrobot-ws
 source docker_run.sh
@@ -23,7 +23,7 @@ source ~/pyrobot-ws/catkin_ws/src/scripts/set_orb_slam.sh
 ## Similarities and Differences with the original facebookresearch Pyrobot repo
 
 ### Similarities
-1. Most code are the exact same as the orignial repo
+1. Most code are exact the same as the orignial repo
 2. Users and maintainers should update this repo with the original repo from time to time to include the newest features. You can use `source git_upstream_pull.sh`
 
 ### Differences

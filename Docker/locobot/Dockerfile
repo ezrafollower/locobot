@@ -46,3 +46,5 @@ RUN ./locobot_install_all.sh -t full -p 2 -l interbotix
 
 RUN rm locobot_install_all.sh
 
+RUN pip install gtsam
+

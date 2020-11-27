@@ -27,7 +27,7 @@ BASH_OPTION=bash
 #     echo "run $3"
 # fi
 
-IMG=argnctu/subt:locobot
+IMG=argnctu/locobot:pyrobot
 
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}") && echo $containerid
